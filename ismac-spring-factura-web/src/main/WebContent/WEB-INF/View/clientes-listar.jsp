@@ -10,7 +10,18 @@
 <h1>Clientes</h1>
 	<table>
 	 <thead>
-	 	<tr></tr>
+	 	<tr>
+	 	<th>idCliente</th>
+		<th>cedula</th>
+		<th>nombre</th>
+		<th>apellido</th>
+		<th>edad</th>
+		<th>fechaNacimiento</th>
+		<th>fechaNacimiento</th>
+		<th>fechaNacimiento</th>
+		<th>fechaNacimiento</th>
+	 	
+	 	</tr>
 	</table>
 </body>
 </html>
