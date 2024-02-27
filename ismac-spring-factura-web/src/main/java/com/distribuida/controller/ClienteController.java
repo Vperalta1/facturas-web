@@ -3,7 +3,10 @@ package com.distribuida.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,14 +52,14 @@ public class ClienteController {
 			,@RequestParam("nombre") @Nullable String nombre
 			,@RequestParam("apellido")@Nullable String apellido
 			,@RequestParam("edad") @Nullable Integer edad
-			,@RequestParam("fechaNacimiento") @Nullable Date fechaNacimiento
+			,@RequestParam("fechaNacimiento") @Nullable @DateTimeFormat(pattern="yyyy-MM-dd") Date fechaNacimiento
 			,@RequestParam("direccion")@Nullable String direccion
 			,@RequestParam("telefono")@Nullable String telefono
 			,@RequestParam("correo")@Nullable String correo
 			) {
 		if(idCliente==null) clienteService.add(0,cedula,nombre,apellido,edad,fechaNacimiento,direccion,telefono,correo);
-		else clienteService.up(idCliente,cedula, nombre, apellido, 0, fechaNacimiento, direccion, correo, telefono);
-		return"redirect:/cliente/findAll";
+		else clienteService.up(idCliente,cedula, nombre, apellido, edad, fechaNacimiento, direccion,telefono, correo);
+		return"redirect:/clientes/findAll";
 }
 @GetMapping("/del")
 public String del(@RequestParam("idCliente")@Nullable Integer idCliente) {

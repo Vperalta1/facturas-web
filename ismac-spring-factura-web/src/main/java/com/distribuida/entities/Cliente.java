@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 
@@ -35,6 +36,7 @@ public class Cliente {
 	 @Column(name = "edad")
 	private int edad;
 	 @Column(name = "fecha_nac")
+	 @DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date fechaNacimiento;
 	 @Column(name = "direccion")
 	private String direccion;

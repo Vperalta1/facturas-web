@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@ Edad
 <input type="number" id="edad" name="edad" value="${cliente.edad}"/>
 <br/><br>
 Fecha de Nacimiento
-<input type="date" id="fechaNacimiento" name="fechaNacimiento" value="${cliente.fechaNacimiento}"/>
+<input type="date" id="fechaNacimiento" name="fechaNacimiento" value="${fn:substring(cliente.fechaNacimiento,0,10)}"/>
 <br/><br>
 Direccion
 <input type="text" id="direccion" name="direccion" value="${cliente.direccion}"/>
