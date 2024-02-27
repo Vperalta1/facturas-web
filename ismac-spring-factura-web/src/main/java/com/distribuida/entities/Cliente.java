@@ -45,7 +45,7 @@ public class Cliente {
 	 
 	public Cliente(int idCliente, String nombre, String apellido, String cedula, int edad, Date fechaNacimiento,
 			String direccion, String correo, String telefono) {
-		super();
+
 		this.idCliente = idCliente;
 		this.nombre = nombre;
 		this.apellido = apellido;
